@@ -25,4 +25,13 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+
+    Route::get('/master/bnh', function () {
+        return view('master.bnh');
+    })->name('master.bhn');
+
+    Route::get('/master/nba', function () {
+        return view('master.nba');
+    })->name('master.nba');
 });

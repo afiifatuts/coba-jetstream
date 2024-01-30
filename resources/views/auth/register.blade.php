@@ -13,16 +13,10 @@
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
   <link href="{{ asset('assets/plugins/material/css/materialdesignicons.min.css') }}" rel="stylesheet" />
   <link href="{{ asset('assets/plugins/simplebar/simplebar.css') }}" rel="stylesheet" />
-
   <!-- PLUGINS CSS STYLE -->
   <link href="{{ asset('assets/plugins/nprogress/nprogress.css') }}" rel="stylesheet" />
-
   <!-- MONO CSS -->
   <link id="main-css-href" rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-
-
-
-
   <!-- FAVICON -->
   <link href="{{ asset('assets/images/favicon.png') }}" rel="shortcut icon" />
   <script src="{{ asset('assets/plugins/nprogress/nprogress.js') }}"></script>
