@@ -369,7 +369,7 @@ $(document).ready(function () {
   NProgress.done();
 
   /*======== 14. DATA TABLE ========*/
-  var productsTable = $("#productsTable");
+  var productsTable = $("#salaryTable");
   if (productsTable.length != 0) {
     productsTable.DataTable({
       info: false,

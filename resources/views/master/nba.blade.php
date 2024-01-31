@@ -1,109 +1,42 @@
 <x-app-layout>
-    <x-slot name="header">
-
-        <!-- Card Offcanvas -->
-        <div class="card card-offcanvas" id="contact-off">
-            <div class="card-header">
-                <h2>Contacts</h2>
-                <a href="#" class="btn btn-primary btn-pill px-4">Add New</a>
-            </div>
-            <div class="card-body">
-
-                <div class="mb-4">
-                    <input type="text" class="form-control form-control-lg form-control-secondary rounded-0"
-                        placeholder="Search contacts...">
-                </div>
-
-                <div class="media media-sm">
-                    <div class="media-sm-wrapper">
-                        <a href="user-profile.html">
-                            <img src="images/user/user-sm-01.jpg" alt="User Image">
-                            <span class="active bg-primary"></span>
-                        </a>
+    <div class="content-wrapper">
+        <div class="content"><!-- For Components documentaion -->
+            <div class="card card-default">
+                <div class="px-6 py-4">
+                    <div class="form-group col-sm-12 col-md-4">
+                        <input class="form-control" type="text" id="searchByName" name="searchByName"
+                            placeholder="Fill name and hit enter" width="100px">
                     </div>
-                    <div class="media-body">
-                        <a href="user-profile.html">
-                            <span class="title">Selena Wagner</span>
-                            <span class="discribe">Designer</span>
-                        </a>
-                    </div>
-                </div>
 
-                <div class="media media-sm">
-                    <div class="media-sm-wrapper">
-                        <a href="user-profile.html">
-                            <img src="images/user/user-sm-02.jpg" alt="User Image">
-                            <span class="active bg-primary"></span>
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <a href="user-profile.html">
-                            <span class="title">Walter Reuter</span>
-                            <span>Developer</span>
-                        </a>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered" id="biodataListTable">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 110px;">
+                                        Biodata Id</th>
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 118px;">
+                                        Name</th>
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 200px;">
+                                        Address</th>
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 130px;">
+                                        Contact No</th>
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 176px;">
+                                        Position</th>
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 120px;">Is
+                                        Active</th>
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 120px;">
+                                        Black List</th>
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 100px;">Act
+                                        Active</th>
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 130px;">Act
+                                        Black List</th>
+                                </tr>
+                            </thead>
+                        </table>
                     </div>
                 </div>
-
-                <div class="media media-sm">
-                    <div class="media-sm-wrapper">
-                        <a href="user-profile.html">
-                            <img src="images/user/user-sm-03.jpg" alt="User Image">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <a href="user-profile.html">
-                            <span class="title">Larissa Gebhardt</span>
-                            <span>Cyber Punk</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="media media-sm">
-                    <div class="media-sm-wrapper">
-                        <a href="user-profile.html">
-                            <img src="images/user/user-sm-04.jpg" alt="User Image">
-                        </a>
-
-                    </div>
-                    <div class="media-body">
-                        <a href="user-profile.html">
-                            <span class="title">Albrecht Straub</span>
-                            <span>Photographer</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="media media-sm">
-                    <div class="media-sm-wrapper">
-                        <a href="user-profile.html">
-                            <img src="images/user/user-sm-05.jpg" alt="User Image">
-                            <span class="active bg-danger"></span>
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <a href="user-profile.html">
-                            <span class="title">Leopold Ebert</span>
-                            <span>Fashion Designer</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="media media-sm">
-                    <div class="media-sm-wrapper">
-                        <a href="user-profile.html">
-                            <img src="images/user/user-sm-06.jpg" alt="User Image">
-                            <span class="active bg-primary"></span>
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <a href="user-profile.html">
-                            <span class="title">Selena Wagner</span>
-                            <span>Photographer</span>
-                        </a>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </x-slot>
+
+    </div>
 </x-app-layout>

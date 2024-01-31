@@ -59,6 +59,9 @@
         <main>
             {{ $slot }}
         </main>
+        {{-- end div content wrapper  --}}
+    </div>
+    {{-- end div wrapper  --}}
     </div>
 
     @stack('modals')
