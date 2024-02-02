@@ -46,99 +46,124 @@
         @livewire('aside-menu')
         @livewire('navigation-menu')
 
+        @section('content')
+            {{ Request::is('master/bnh') }}
+            @switch(true)
+                @case(Request::is('master/bnh'))
+                    <script src="{{ asset('js/master/biodata.js') }}"></script>
+                @break
 
-        <!-- Page Heading -->
-        {{-- @if (isset($header))
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
-    @endif --}}
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
-        {{-- end div content wrapper  --}}
-    </div>
-    {{-- end div wrapper  --}}
-    </div>
+                @case(Request::is('master/nba'))
+                    @include('masters.v_biodata_activation')
+                @break
 
-    @stack('modals')
-    @livewireScripts
-    <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/simplebar/simplebar.min.js') }}"></script>
-    <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
-    <script src="{{ asset('assets/plugins/apexcharts/apexcharts.js') }}"></script>
-    <script src="{{ asset('assets/plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-world-mill.js') }}"></script>
-    <script src="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-us-aea.js') }}"></script>
-    <script src="{{ asset('assets/plugins/daterangepicker/moment.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
-    <script>
-        jQuery(document).ready(function() {
-            jQuery('input[name="dateRange"]').daterangepicker({
-                autoUpdateInput: false,
-                singleDatePicker: true,
-                locale: {
-                    cancelLabel: 'Clear'
-                }
-            });
-            jQuery('input[name="dateRange"]').on('apply.daterangepicker', function(ev, picker) {
-                jQuery(this).val(picker.startDate.format('MM/DD/YYYY'));
-            });
-            jQuery('input[name="dateRange"]').on('cancel.daterangepicker', function(ev, picker) {
-                jQuery(this).val('');
-            });
-        });
-    </script>
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script src="{{ asset('assets/plugins/toaster/toastr.min.js') }}"></script>
-    <script src="{{ asset('assets/js/mono.js') }}"></script>
-    <script src="{{ asset('assets/js/chart.js') }}"></script>
-    <script src="{{ asset('assets/js/map.js') }}"></script>
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <!-- Code injected by live-server -->
-    <script>
-        // <![CDATA[  <-- For SVG support
-        if ('WebSocket' in window) {
-            (function() {
-                function refreshCSS() {
-                    var sheets = [].slice.call(document.getElementsByTagName("link"));
-                    var head = document.getElementsByTagName("head")[0];
-                    for (var i = 0; i < sheets.length; ++i) {
-                        var elem = sheets[i];
-                        var parent = elem.parentElement || head;
-                        parent.removeChild(elem);
-                        var rel = elem.rel;
-                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() ==
-                            "stylesheet") {
-                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date()
-                                .valueOf());
-                        }
-                        parent.appendChild(elem);
+                @case(Request::is('master/msl'))
+                    @include('masters.v_salary')
+                @break
+
+                @case(Request::is('master/mba'))
+                    @include('masters.v_bank_account')
+                @break
+
+                @case(Request::is('master/rte'))
+                    @include('masters.v_rte_master')
+                @break
+
+                @case(Request::is('master/plh'))
+                    @include('masters.v_plh_agincourt')
+                @break
+
+                {{-- ... (Sesuaikan dengan kasus lainnya) --}}
+
+                @default
+                    <!-- Default content or error message -->
+            @endswitch
+
+
+
+            <main>
+                {{ $slot }}
+            </main>
+            {{-- end div content wrapper  --}}
+        </div>
+        {{-- end div wrapper  --}}
+        </div>
+
+        @stack('modals')
+        @livewireScripts
+        <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/simplebar/simplebar.min.js') }}"></script>
+        <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+        <script src="{{ asset('assets/plugins/apexcharts/apexcharts.js') }}"></script>
+        <script src="{{ asset('assets/plugins/DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-world-mill.js') }}"></script>
+        <script src="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-us-aea.js') }}"></script>
+        <script src="{{ asset('assets/plugins/daterangepicker/moment.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
+        <script>
+            jQuery(document).ready(function() {
+                jQuery('input[name="dateRange"]').daterangepicker({
+                    autoUpdateInput: false,
+                    singleDatePicker: true,
+                    locale: {
+                        cancelLabel: 'Clear'
                     }
-                }
-                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-                var address = protocol + window.location.host + window.location.pathname + '/ws';
-                var socket = new WebSocket(address);
-                socket.onmessage = function(msg) {
-                    if (msg.data == 'reload') window.location.reload();
-                    else if (msg.data == 'refreshcss') refreshCSS();
-                };
-                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-                    console.log('Live reload enabled.');
-                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-                }
-            })();
-        } else {
-            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-        }
-        // ]]>
-    </script>
-</body>
+                });
+                jQuery('input[name="dateRange"]').on('apply.daterangepicker', function(ev, picker) {
+                    jQuery(this).val(picker.startDate.format('MM/DD/YYYY'));
+                });
+                jQuery('input[name="dateRange"]').on('cancel.daterangepicker', function(ev, picker) {
+                    jQuery(this).val('');
+                });
+            });
+        </script>
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+        <script src="{{ asset('assets/plugins/toaster/toastr.min.js') }}"></script>
+        <script src="{{ asset('assets/js/mono.js') }}"></script>
+        <script src="{{ asset('assets/js/chart.js') }}"></script>
+        <script src="{{ asset('assets/js/map.js') }}"></script>
+        <script src="{{ asset('assets/js/custom.js') }}"></script>
+        <!-- Code injected by live-server -->
+        <script>
+            // <![CDATA[  <-- For SVG support
+            if ('WebSocket' in window) {
+                (function() {
+                    function refreshCSS() {
+                        var sheets = [].slice.call(document.getElementsByTagName("link"));
+                        var head = document.getElementsByTagName("head")[0];
+                        for (var i = 0; i < sheets.length; ++i) {
+                            var elem = sheets[i];
+                            var parent = elem.parentElement || head;
+                            parent.removeChild(elem);
+                            var rel = elem.rel;
+                            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() ==
+                                "stylesheet") {
+                                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date()
+                                    .valueOf());
+                            }
+                            parent.appendChild(elem);
+                        }
+                    }
+                    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                    var address = protocol + window.location.host + window.location.pathname + '/ws';
+                    var socket = new WebSocket(address);
+                    socket.onmessage = function(msg) {
+                        if (msg.data == 'reload') window.location.reload();
+                        else if (msg.data == 'refreshcss') refreshCSS();
+                    };
+                    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                        console.log('Live reload enabled.');
+                        sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                    }
+                })();
+            } else {
+                console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+            }
+            // ]]>
+        </script>
+    </body>
 
-</html>
+    </html>

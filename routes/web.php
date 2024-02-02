@@ -146,44 +146,58 @@ Route::middleware([
     Route::get('/report/kla', function () {
         return view('report.kla');
     })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    Route::get('/report/kla', function () {
-        return view('report.kla');
-    })->name('report.kla');
-    
+    Route::get('/report/srp', function () {
+        return view('report.srp');
+    })->name('report.srp');
+    Route::get('/report/clr', function () {
+        return view('report.clr');
+    })->name('report.clr');
+    Route::get('/report/edt', function () {
+        return view('report.edt');
+    })->name('report.edt');
+    Route::get('/report/prs', function () {
+        return view('report.prs');
+    })->name('report.prs');
+    Route::get('/report/bev', function () {
+        return view('report.bev');
+    })->name('report.bev');
+    Route::get('/report/bxl', function () {
+        return view('report.bxl');
+    })->name('report.bxl');
+    Route::get('/report/dlc', function () {
+        return view('report.dlc');
+    })->name('report.dlc');
+    Route::get('/report/ebl', function () {
+        return view('report.ebl');
+    })->name('report.ebl');
+    Route::get('/report/rtp', function () {
+        return view('report.rtp');
+    })->name('report.rtp');
+    Route::get('/report/mpd', function () {
+        return view('report.mpd');
+    })->name('report.mpd');
+    Route::get('/report/rsm', function () {
+        return view('report.rsm');
+    })->name('report.rsm');
+    Route::get('/report/hoc', function () {
+        return view('report.hoc');
+    })->name('report.hoc');
+    Route::get('/report/hut', function () {
+        return view('report.hut');
+    })->name('report.hut');
+
+
+    // SETTINGS
+    Route::get('/admin/usr', function () {
+        return view('settings.usr');
+    })->name('settings.usr');
+    Route::get('/admin/acs', function () {
+        return view('admin.acs');
+    })->name('admin.acs');
+    Route::get('/utilities/pwc', function () {
+        return view('utilities.pwc');
+    })->name('utilities.pwc');
+    Route::get('/helper/inf', function () {
+        return view('helper.inf');
+    })->name('helper.inf');
 });

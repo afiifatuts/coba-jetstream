@@ -329,12 +329,12 @@
                         data-parent="#sidebar-menu">
                         <div class="sub-menu">
                             <li class=" {{ Request::is('admin/usr') ? 'active' : '' }} ">
-                                <a class="sidenav-item-link " href="{{ url('/report/usr') }}">
+                                <a class="sidenav-item-link " href="{{ url('/admin/usr') }}">
                                     <span class="nav-text">User</span>
                                 </a>
                             </li>
                             <li class=" {{ Request::is('admin/acs') ? 'active' : '' }} ">
-                                <a class="sidenav-item-link " href="{{ url('/report/acs') }}">
+                                <a class="sidenav-item-link " href="{{ url('/admin/acs') }}">
                                     <span class="nav-text">Akses Menu</span>
                                 </a>
                             </li>
