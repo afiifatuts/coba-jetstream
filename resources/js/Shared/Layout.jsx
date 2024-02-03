@@ -11,13 +11,12 @@ export const Layout = ({ children, left, right }) => {
                 <Sidebar />
                 <Header />
                 <div className="page-wrapper">
-                    <PageHeader left={left} right={right} />
+                    {left || right ? <PageHeader left={left} right={right} /> : null}
                     <div className="page-header d-print-none">
                         <div className="container-xl">
                             {children}
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

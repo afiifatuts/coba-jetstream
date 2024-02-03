@@ -6,11 +6,11 @@ const PageHeader = ({ left, right }) => {
             <div className="container-xl">
                 <div className="row g-2 align-items-center">
                     <div className="col">
-                        {right}
+                        {left}
                     </div>
 
                     <div className="col-auto ms-auto d-print-none">
-                        {left}
+                        {right}
                     </div>
                 </div>
             </div>

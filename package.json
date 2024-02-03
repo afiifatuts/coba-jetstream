@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@inertiajs/react": "^1.0.14",
+        "@tabler/icons-react": "^2.47.0",
         "@vitejs/plugin-react": "^4.2.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
