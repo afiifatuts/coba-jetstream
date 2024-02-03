@@ -2,121 +2,132 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <header className="main-header" id="header">
-            <nav className="navbar navbar-expand-lg navbar-light" id="navbar">
-
-                <button id="sidebar-toggler" className="sidebar-toggle">
-                    <span className="sr-only">Toggle navigation</span>
+        <header className="navbar navbar-expand-md d-none d-lg-flex d-print-none" >
+            <div className="container-xl">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <span className="page-title">
-                    <a href="{{ route('dashboard') }}">dashboard</a></span>
-                <div className="navbar-right ">
-                    <ul className="nav navbar-nav">
-                        <li className="custom-dropdown">
-                            <button className="notify-toggler custom-dropdown-toggler">
-                                <i className="mdi mdi-bell-outline icon"></i>
-                                <span className="badge badge-xs rounded-circle">21</span>
-                            </button>
-                            <div className="dropdown-notify">
-                                <header>
-                                    <div className="nav nav-underline" id="nav-tab" role="tablist">
-                                        <a className="nav-item nav-link active" id="all-tabs" data-toggle="tab" href="#all"
-                                            role="tab" aria-controls="nav-home" aria-selected="true">All (5)</a>
+                <div className="flex-row navbar-nav order-md-last">
+                    <div className="d-none d-md-flex">
+                        <a href="?theme=dark" className="px-0 nav-link hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>
+                        </a>
+                        <a href="?theme=light" className="px-0 nav-link hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>
+                        </a>
+                        <div className="nav-item dropdown d-none d-md-flex me-3">
+                            <a href="#" className="px-0 nav-link" data-bs-toggle="dropdown" tabindex="-1" aria-label="Show notifications">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+                                <span className="badge bg-red"></span>
+                            </a>
+                            <div className="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
+                                <div className="card">
+                                    <div className="card-header">
+                                        <h3 className="card-title">Last updates</h3>
                                     </div>
-                                </header>
-                                <div className="" data-simplebar style={{ height: '325px' }}>
-                                    <div className="tab-content" id="myTabContent">
-                                        <div className="tab-pane fade show active" id="all" role="tabpanel"
-                                            aria-labelledby="all-tabs">
-                                            <div className="p-4 mb-0 media media-sm bg-light">
-                                                <div className="media-sm-wrapper bg-primary">
-                                                    <a href="user-profile.html">
-                                                        <i className="mdi mdi-calendar-check-outline"></i>
-                                                    </a>
+                                    <div className="list-group list-group-flush list-group-hoverable">
+                                        <div className="list-group-item">
+                                            <div className="row align-items-center">
+                                                <div className="col-auto"><span className="status-dot status-dot-animated bg-red d-block"></span></div>
+                                                <div className="col text-truncate">
+                                                    <a href="#" className="text-body d-block">Example 1</a>
+                                                    <div className="d-block text-muted text-truncate mt-n1">
+                                                        Change deprecated html tags to text decoration classes (#29604)
+                                                    </div>
                                                 </div>
-                                                <div className="media-body">
-                                                    <a href="user-profile.html">
-                                                        <span className="mb-0 title">New event added</span>
-                                                        <span className="discribe">1/3/2014 (1pm - 2pm)</span>
-                                                        <span className="time">
-                                                            <time>10 min ago...</time>...
-                                                        </span>
+                                                <div className="col-auto">
+                                                    <a href="#" className="list-group-item-actions">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
                                                     </a>
                                                 </div>
                                             </div>
-
-
-
-                                            <div className="p-4 mb-0 media media-sm">
-                                                <div className="media-sm-wrapper bg-info-dark">
-                                                    <a href="user-profile.html">
-                                                        <i className="mdi mdi-account-multiple-check"></i>
+                                        </div>
+                                        <div className="list-group-item">
+                                            <div className="row align-items-center">
+                                                <div className="col-auto"><span className="status-dot d-block"></span></div>
+                                                <div className="col text-truncate">
+                                                    <a href="#" className="text-body d-block">Example 2</a>
+                                                    <div className="d-block text-muted text-truncate mt-n1">
+                                                        justify-content:between ⇒ justify-content:space-between (#29734)
+                                                    </div>
+                                                </div>
+                                                <div className="col-auto">
+                                                    <a href="#" className="list-group-item-actions show">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon text-yellow" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
                                                     </a>
                                                 </div>
-                                                <div className="media-body">
-                                                    <a href="user-profile.html">
-                                                        <span className="mb-0 title">Add request</span>
-                                                        <span className="discribe">Add Dany Jones as your contact.</span>
-                                                        <div className="buttons">
-                                                            <a href="#/"
-                                                                className="text-white shadow-none btn btn-sm btn-success">
-                                                                accept
-                                                            </a>
-                                                            {/* <a href="#" className="shadow-none btn btn-sm">delete</a> */}
-                                                        </div>
-                                                        <span className="time">
-                                                            <time>6 hrs ago</time>...
-                                                        </span>
+                                            </div>
+                                        </div>
+                                        <div className="list-group-item">
+                                            <div className="row align-items-center">
+                                                <div className="col-auto"><span className="status-dot d-block"></span></div>
+                                                <div className="col text-truncate">
+                                                    <a href="#" className="text-body d-block">Example 3</a>
+                                                    <div className="d-block text-muted text-truncate mt-n1">
+                                                        Update change-version.js (#29736)
+                                                    </div>
+                                                </div>
+                                                <div className="col-auto">
+                                                    <a href="#" className="list-group-item-actions">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="list-group-item">
+                                            <div className="row align-items-center">
+                                                <div className="col-auto"><span className="status-dot status-dot-animated bg-green d-block"></span></div>
+                                                <div className="col text-truncate">
+                                                    <a href="#" className="text-body d-block">Example 4</a>
+                                                    <div className="d-block text-muted text-truncate mt-n1">
+                                                        Regenerate package-lock.json (#29730)
+                                                    </div>
+                                                </div>
+                                                <div className="col-auto">
+                                                    <a href="#" className="list-group-item-actions">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <footer className="border-top dropdown-notify-footer">
-                                    <div className="px-4 py-2 d-flex justify-content-between align-items-center">
-                                        <span>Last updated 3 min ago</span>
-                                        <a id="refress-button" href="#/"
-                                            className="btn mdi mdi-cached btn-refress">tes</a>
-                                    </div>
-                                </footer>
                             </div>
-                        </li>
-                        <li className="dropdown user-menu">
-                            <button className="dropdown-toggle nav-link" data-toggle="dropdown">
-
-                                <img
-                                    src=""
-                                    alt=""
-                                    className="user-image rounded-circle"
-                                />
-
-                                <span className="d-none d-lg-inline-block"> Admin</span>
-
-                            </button>
-                            <ul className="dropdown-menu dropdown-menu-right">
-                                <li>
-                                    <a className="dropdown-link-item" href="{{ route('profile.show') }}">
-                                        <i className="mdi mdi-account-outline"></i>
-                                        <span className="nav-text">My Profile</span>
-                                    </a>
-                                </li>
-                                <li className="dropdown-footer">
-                                    <form method="POST" action="#/">
-
-
-                                        <a className="dropdown-link-item" href="#/"
-                                        >
-                                            <i className="mdi mdi-logout"></i> Log Out
-                                        </a>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
+                    <div className="nav-item dropdown">
+                        <a href="#" className="p-0 nav-link d-flex lh-1 text-reset" data-bs-toggle="dropdown" aria-label="Open user menu">
+                            <span className="avatar avatar-sm" style={{ backgroundImage: `url(/assets/icons/000m.jpg)` }}></span>
+                            <div className="d-none d-xl-block ps-2">
+                                <div>Paweł Kuna</div>
+                                <div className="mt-1 small text-muted">UI Designer</div>
+                            </div>
+                        </a>
+                        <div className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                            <a href="#" className="dropdown-item">Status</a>
+                            <a href="./profile.html" className="dropdown-item">Profile</a>
+                            <a href="#" className="dropdown-item">Feedback</a>
+                            <div className="dropdown-divider"></div>
+                            <a href="./settings.html" className="dropdown-item">Settings</a>
+                            <a href="./sign-in.html" className="dropdown-item">Logout</a>
+                        </div>
+                    </div>
                 </div>
-            </nav>
+                <div className="collapse navbar-collapse" id="navbar-menu">
+                    <div>
+                        <form action="./" method="get" autocomplete="off" novalidate>
+                            <div className="input-icon">
+                                <span className="input-icon-addon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                                </span>
+                                <input type="text" value="" className="form-control" placeholder="Search…" aria-label="Search in website" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </header>
     )
 }
