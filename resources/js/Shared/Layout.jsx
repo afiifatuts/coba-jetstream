@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import Header from './Header'
 import PageHeader from './PageHeader'
+import "rsuite/dist/rsuite.min.css";
 
 export const Layout = ({ children, left, right }) => {
 
