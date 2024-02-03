@@ -19,5 +19,5 @@ Route::controller(DashboardController::class)->group(function () {
 });
 
 Route::controller(MasterController::class)->group(function () {
-    Route::get('master', 'index')->name('admin.master');
+    Route::get('masters', 'index')->name('admin.master');
 });
