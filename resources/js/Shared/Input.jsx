@@ -1,21 +1,21 @@
 import React from 'react'
 
-export const Input = ({ id, label, onChange, error, value, placeholder, type = 'text', isRequired }) => {
+const Input = ({ label, onChange, error, value, placeholder, type = 'text', isRequired }) => {
     return (
         <>
-            <label htmlFor={id}>{label}</label>
+            <label className={`form-label ${isRequired ? 'required' : ''}`}>{label}</label>
             <input
-                id={id}
-                className={`form-control input-lg ${error ? 'is-invalid' : ''}`}
-                type={type}
-                // required={isRequired}
-                placeholder={placeholder}
                 onChange={onChange}
                 value={value}
+                type={type}
+                className={`form-control ${error ? "is-invalid" : ""}`}
+                placeholder={placeholder}
             />
-            <div className="mt-1 text-danger small">
+            <div className="invalid-feedback">
                 {error}
             </div>
         </>
     )
 }
+
+export default Input

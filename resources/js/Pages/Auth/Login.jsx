@@ -1,8 +1,8 @@
 import { Link, useForm, usePage } from '@inertiajs/react'
 import React, { useEffect } from 'react'
-import { Input } from '../../Shared/Input'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import Input from '../../Shared/Input';
 
 const Login = () => {
     const { props } = usePage()
@@ -11,6 +11,7 @@ const Login = () => {
     const { post, data, errors, setData } = useForm({
         email: '',
         password: '',
+        remember: false,
     })
 
     const handleLogin = (e) => {
@@ -34,68 +35,73 @@ const Login = () => {
     }, [flash])
 
     return (
-        <div className="container d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
+        <div className="page page-center">
             <ToastContainer />
-            <div className="d-flex flex-column justify-content-between">
-                <div className="row justify-content-center">
-                    <div className="col-lg-6 col-md-10">
-                        <div className="mb-0 card card-default">
-                            <div className="pb-0 card-header">
-                                <div className="app-brand w-100 d-flex justify-content-center border-bottom-0">
-                                    <a className="w-auto pl-0" href="/index.html">
-                                        <span className="brand-name text-dark">Welcome !</span>
-                                    </a>
+            <div className="container py-4 container-tight">
+                <div className="mb-4 text-center">
+                    <a href="." className="navbar-brand navbar-brand-autodark">
+                        <img src="/assets/logo.svg" height="36" alt="" />
+                    </a>
+                </div>
+                <div className="card card-md">
+                    <div className="card-body">
+                        <h2 className="mb-4 text-center h2">Login to your account</h2>
+                        <form onSubmit={handleLogin}>
+                            <div className="mb-3">
+                                <Input
+                                    label="Email"
+                                    type="email"
+                                    value={data.email}
+                                    error={errors.email}
+                                    onChange={(e) => setData('email', e.target.value)}
+                                    placeholder="Your email"
+                                    isRequired
+                                />
+                            </div>
+                            <div className="mb-2">
+                                <label className="form-label">
+                                    Password
+                                    <span className="form-label-description">
+                                        <a href="./forgot-password.html">I forgot password</a>
+                                    </span>
+                                </label>
+                                <div className="input-group input-group-flat">
+                                    <input
+                                        type="password"
+                                        className={`form-control ${errors.password ? "is-invalid" : ""}`}
+                                        placeholder="Your password"
+                                        autocomplete="off"
+                                        value={data.password}
+                                        onChange={(e) => setData('password', e.target.value)}
+                                    />
+                                    <span className="input-group-text">
+                                        <a href="#" className="link-secondary" title="Show password" data-bs-toggle="tooltip">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
+                                        </a>
+                                    </span>
                                 </div>
                             </div>
-                            <div className="px-5 pt-0 pb-5 card-body">
-
-                                <h4 className="mb-6 text-center text-dark">Sign in</h4>
-                                <form onSubmit={handleLogin}>
-                                    <div className="row">
-                                        <div className="mb-4 form-group col-md-12">
-                                            <Input
-                                                id="email"
-                                                label="Email"
-                                                type="email"
-                                                isRequired
-                                                placeholder="Email"
-                                                error={errors.email}
-                                                value={data.email}
-                                                onChange={(e) => setData('email', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className="form-group col-md-12 ">
-                                            <Input
-                                                id="password"
-                                                label="Password"
-                                                type="password"
-                                                isRequired
-                                                placeholder="Password"
-                                                error={errors.password}
-                                                value={data.password}
-                                                onChange={(e) => setData('password', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className="col-md-12">
-                                            <div className="mb-3 d-flex justify-content-between">
-                                                <Link
-                                                    className="text-color" href="/auth/forgot-password">
-                                                    Forgot password ?
-                                                </Link>
-                                            </div>
-                                            <button type="submit" className="mb-4 btn btn-primary btn-pill">
-                                                Sign In
-                                            </button>
-                                            <p>
-                                                Don't have an account yet ?
-                                                <Link className="text-blue" href="/auth/sign-up">Sign Up</Link>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </form>
+                            <div className="mb-2">
+                                <label className="form-check">
+                                    <input
+                                        type="checkbox"
+                                        className="form-check-input"
+                                        checked={data.remember}
+                                        onChange={(e) => setData('remember', e.target.checked)}
+                                    />
+                                    <span className="form-check-label">Remember me on this device</span>
+                                </label>
                             </div>
-                        </div>
+                            <div className="form-footer">
+                                <button type="submit" className="btn btn-primary w-100">
+                                    Sign in
+                                </button>
+                            </div>
+                        </form>
                     </div>
+                </div>
+                <div className="mt-3 text-center text-muted">
+                    Don't have account yet? <a href="./sign-up.html" tabindex="-1">Sign up</a>
                 </div>
             </div>
         </div>

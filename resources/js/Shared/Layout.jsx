@@ -1,18 +1,24 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import Header from './Header'
+import PageHeader from './PageHeader'
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, left, right }) => {
 
     return (
-        <div className="wrapper">
-            <Sidebar />
-            <div className="page-wrapper">
+        <div className="page">
+            <div className="wrapper">
+                <Sidebar />
                 <Header />
-                <main>
-                    {children}
-                </main>
+                <div className="page-wrapper">
+                    <PageHeader left={left} right={right} />
+                    <div className="page-header d-print-none">
+                        <div className="container-xl">
+                            {children}
+                        </div>
+                    </div>
 
+                </div>
             </div>
         </div>
     )
